@@ -34,7 +34,7 @@ const createWeatherCard = (cityName, weatherItem, index) => {
 
 //API gives us the forecast after a gap of 3 hours so we have to make it for 5 days
 const getWeatherDetails = (cityName, lat, lon) => {
-    const WEATHER_API_URL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
+    const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}`;
 
     fetch(WEATHER_API_URL).then(res => res.json()).then(data => {
         //console.log(data);
@@ -71,7 +71,7 @@ const getWeatherDetails = (cityName, lat, lon) => {
 const getCityCoordinates = () => {
     const cityName = cityInput.value.trim(); //get user entered city name and trim remove extra spaces
     if (!cityName) return;
-    const GEOCODING_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
+    const GEOCODING_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${API_KEY}`;
     //fetch function is used to make network requests (e.g., fetching data from a server). It returns a Promise that resolves to the Response to that request, whether it is successful or not.
     //get entered city coordinates from api response
     fetch(GEOCODING_API_URL).then(res => res.json()).then(data => {
@@ -92,7 +92,7 @@ const getUserCoordinates = () => {
             //get co-ords of location
             const { latitude, longitude } = position.coords;
             //get city name by co-ords
-            const REVERSE_GEOCODING_URL = `http://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
+            const REVERSE_GEOCODING_URL = `https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&limit=1&appid=${API_KEY}`;
             fetch(REVERSE_GEOCODING_URL).then(res => res.json()).then(data => {
                 // console.log(data);
                 // if(!data.length) return alert("Some error occured in fetching coordinates!!");
