@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:wght@300;400&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,25 +8,30 @@
 }
 
 body {
-    background: #8de9d5;
+    background: #58EFEC; 
 }
 
 h1 {
     color: #fff;
     text-align: center;
-    font-size: 1.7 rem;
+    font-family: "Merriweather", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.9 rem;
     padding: 20px 0;
     background: #047c78;
 }
 
 .container {
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap: 35px;
     padding: 30px;
 }
 
 .weather-input {
-    width: 550px;
+    width: 450px;
 }
 
 .weather-input input {
@@ -44,7 +49,7 @@ h1 {
     height: 1px;
     width: 100%;
     margin: 25px 0;
-    background: #bbb;
+    background: #303030;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +61,7 @@ h1 {
     font-size: 1.18rem;
     padding: 0 15px;
     margin-top: -4px;
-    background: #8de9d5;
+    background: #58EFEC;
 }
 
 .weather-input button {
@@ -76,14 +81,15 @@ h1 {
 }
 
 .weather-data {
-    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .current-weather {
     color: #fff;
     background: #047c78;
     box-shadow: 0 0 10px #011615;
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 20px 70px 20px 20px;
     display: flex;
     justify-content: space-between;
@@ -92,6 +98,7 @@ h1 {
 
 .current-weather:hover {
     transform: scale(1.02);
+    box-shadow: 0 0 15px #011615;
 }
 
 .current-weather h2 {
@@ -135,7 +142,7 @@ h1 {
 .weather-cards .card {
     background: #6C757D;
     list-style: none;
-    border-radius: 5px;
+    border-radius: 15px;
     color: #fff;
     padding: 18px 16px;
     width: calc(100% / 5-10px);
